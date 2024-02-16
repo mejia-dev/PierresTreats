@@ -8,13 +8,20 @@
 <h2>@ViewBag.PageTitle</h2>
 <br />
 
-@if(!ViewData.ModelState.IsValid) 
+@if (!ViewData.ModelState.IsValid)
 {
-  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+  <p class="error">@Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")</p>
 }
 
 @using (Html.BeginForm())
 {
+  @if (ViewBag.ErrorMessage != null)
+  {
+    <p class="error">@ViewBag.ErrorMessage</p>
+    @* @Html.Hidden("ReturnUrl", ViewBag.LoginRedirect) *@
+    <input style="{display: hidden}" type="hidden" name="RedirectAction" value="@ViewBag.LoginRedirect" />
+
+  }
   @Html.LabelFor(m => m.Email)
   @Html.TextBoxFor(m => m.Email)
 
