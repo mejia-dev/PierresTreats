@@ -18,11 +18,7 @@ else
     @foreach(TreatFlavor trfl in Model.FlavorTypes)
     {
       <li>@Html.ActionLink($"{trfl.Flavor.FlavorName}", "Details", "Flavors", new {id = trfl.Flavor.FlavorId})</li>
-      @using (Html.BeginForm("DeleteFlavor", "Treats"))
-      {
-        @Html.Hidden("treatFlavorId", @trfl.TreatFlavorId)
-        <input type="submit" value="Delete"/>
-      }
+      <button>@Html.ActionLink("Delete", "DeleteFlavor", "Treats", new { treatFlavorId = trfl.TreatFlavorId })</button>
     }
 }
 </p>
