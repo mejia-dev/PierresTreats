@@ -4,6 +4,20 @@
     <button>@Html.ActionLink("Home", "Index", "Home")</button>
     <button>@Html.ActionLink("Treats", "Index", "Treats")</button>
     <button>@Html.ActionLink("Flavors", "Index", "Flavors")</button>
+    <div>
+      @if (User.Identity.IsAuthenticated)
+      {
+        <br />
+        <p>
+          Welcome, <span>@User.Identity.Name</span>!<br />
+          @Html.ActionLink("Manage Account", "Index", "Accounts")
+        </p>
+      }
+      else
+      {
+        <p>@Html.ActionLink("Log In / Register", "Index", "Accounts")</p>
+      }
+    </div>
   </div>
   <br />
 </div>
