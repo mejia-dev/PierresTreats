@@ -17,12 +17,15 @@
   {
     @foreach (TreatFlavor trfl in Model.TreatTypes)
     {
-    <li>@Html.ActionLink($"{trfl.Treat.TreatName}", "Details", "Treats", new { id = trfl.Treat.TreatId })</li>
-      @using (Html.BeginForm("DeleteTreat", "Flavors"))
+    <li>
+      @Html.ActionLink($"{trfl.Treat.TreatName}", "Details", "Treats", new { id = trfl.Treat.TreatId })
+      <button>@Html.ActionLink("Delete", "DeleteTreat", "Flavors", new { id = trfl.TreatFlavorId })</button>
+    </li>
+      @* @using (Html.BeginForm("DeleteTreat", "Flavors"))
       {
         @Html.Hidden("treatFlavorId", @trfl.TreatFlavorId)
       <input type="submit" value="Delete" />
-      }
+      } *@
     }
   }
 </p>
