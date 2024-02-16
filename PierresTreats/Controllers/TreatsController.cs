@@ -123,8 +123,8 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public ActionResult DeleteFlavor(int treatFlavorId)
     {
-      TreatFlavor selectedFlavor = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
-      _db.TreatFlavors.Remove(selectedFlavor);
+      TreatFlavor selectedTreatFlavor = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
+      _db.TreatFlavors.Remove(selectedTreatFlavor);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
