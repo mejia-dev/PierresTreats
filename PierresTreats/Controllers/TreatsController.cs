@@ -75,7 +75,7 @@ namespace PierresTreats.Controllers
       {
       _db.Treats.Update(trt);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = trt.TreatId });
       }
     }
 
