@@ -104,7 +104,7 @@ namespace PierresTreats.Controllers
       Flavor thisFlavor = _db.Flavors
         .Include(flvr => flvr.TreatTypes)
         .FirstOrDefault(flvr => flvr.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatFullName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
       ViewBag.PageTitle = $"Add a Treat in {thisFlavor.FlavorName} Flavor";
       return View(thisFlavor);
     }
