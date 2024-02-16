@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+@using PierresTreats.Models;
+
+<h2>@ViewBag.PageTitle</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+  @Html.HiddenFor(model => model.AssignedMachines)
+  <p>
+    Treat Name: @Html.TextBoxFor(model => model.TreatName)<br />
+    @Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "error" })<br />
+  </p>
+  <input type="submit" value="Update Treat" /><br />
+  @Html.ActionLink("Discard Changes", "Details", new {id = @Model.TreatId})
+}
+<br /><br />
+@Html.ActionLink("Back to All Treats", "Index")
