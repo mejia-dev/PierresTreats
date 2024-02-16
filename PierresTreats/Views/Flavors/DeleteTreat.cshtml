@@ -1,14 +1,14 @@
 @{
   Layout = "_Layout";
 }
-
 @model PierresTreats.Models.TreatFlavor
+@using PierresTreats.Models;
 
 <h2>@ViewBag.PageTitle</h2>
 
 <p class="error">Please confirm the removal of this treat flavor by clicking the button below:</p>
-@using (Html.BeginForm("DeleteTreat", "Flavors"))
+@using (Html.BeginForm())
 {
   <input type="submit" value="Delete This Flavor of Treat" />
 }
-@* @Html.ActionLink("Cancel", "Details", new { id = Model.Flavor.FlavorId }) *@
+@Html.ActionLink("Cancel", "Details", new { id = Model.FlavorId })

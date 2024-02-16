@@ -131,13 +131,13 @@ namespace PierresTreats.Controllers
       return View(selectedTreatFlavor);
     }
 
-    // [HttpPost, ActionName("DeleteTreat")]
-    // public ActionResult DeleteTreatConfirmed(int treatFlavorId)
-    // {
-    //   TreatFlavor selectedTreatFlavor = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
-    //   _db.TreatFlavors.Remove(selectedTreatFlavor);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost, ActionName("DeleteTreat")]
+    public ActionResult DeleteTreatConfirmed(int treatFlavorId)
+    {
+      TreatFlavor selectedTreatFlavor = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
+      _db.TreatFlavors.Remove(selectedTreatFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = selectedTreatFlavor.FlavorId});
+    }
   }
 }
