@@ -1,4 +1,5 @@
 using PierresTreats.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using System.Linq;
 
 namespace PierresTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -17,6 +19,7 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       ViewBag.PageTitle = "Flavors";
@@ -28,13 +31,14 @@ namespace PierresTreats.Controllers
       ViewBag.PageTitle = "Add a Flavor";
       return View();
     }
+
     [HttpPost]
     public ActionResult Create(Flavor flvr)
     {
       if (!ModelState.IsValid)
       {
-          ViewBag.PageTitle = "Add a Flavor";
-          return View(flvr);
+        ViewBag.PageTitle = "Add a Flavor";
+        return View(flvr);
       }
       else
       {
@@ -44,6 +48,7 @@ namespace PierresTreats.Controllers
       }
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Flavor thisFlavor = _db.Flavors
@@ -67,14 +72,14 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-          ViewBag.PageTitle = $"Edit Flavor - {flvr.FlavorName}";
-          return View(flvr);
+        ViewBag.PageTitle = $"Edit Flavor - {flvr.FlavorName}";
+        return View(flvr);
       }
       else
       {
-      _db.Flavors.Update(flvr);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+        _db.Flavors.Update(flvr);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
       }
     }
 
@@ -107,12 +112,12 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public ActionResult AddTreat(Flavor flvr, int treatId)
     {
-      #nullable enable
+#nullable enable
       TreatFlavor? joinEntity = _db.TreatFlavors.FirstOrDefault(join => (join.TreatId == treatId && join.FlavorId == flvr.FlavorId));
-      #nullable disable
+#nullable disable
       if (treatId != 0 && joinEntity == null)
       {
-        TreatFlavor newTreatFlavor = new TreatFlavor() { TreatId = treatId, FlavorId = flvr.FlavorId};
+        TreatFlavor newTreatFlavor = new TreatFlavor() { TreatId = treatId, FlavorId = flvr.FlavorId };
         _db.TreatFlavors.Add(newTreatFlavor);
         _db.SaveChanges();
       }

@@ -1,4 +1,5 @@
 using PierresTreats.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using System.Linq;
 
 namespace PierresTreats.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -17,6 +19,7 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       ViewBag.PageTitle = "Treats";
@@ -34,8 +37,8 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-          ViewBag.PageTitle = "Add a Treat";
-          return View(trt);
+        ViewBag.PageTitle = "Add a Treat";
+        return View(trt);
       }
       else
       {
@@ -45,6 +48,7 @@ namespace PierresTreats.Controllers
       }
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
@@ -68,14 +72,14 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-          ViewBag.PageTitle = $"Edit Treat - {trt.TreatName}";
-          return View(trt);
+        ViewBag.PageTitle = $"Edit Treat - {trt.TreatName}";
+        return View(trt);
       }
       else
       {
-      _db.Treats.Update(trt);
-      _db.SaveChanges();
-      return RedirectToAction("Details", new { id = trt.TreatId });
+        _db.Treats.Update(trt);
+        _db.SaveChanges();
+        return RedirectToAction("Details", new { id = trt.TreatId });
       }
     }
 
@@ -108,12 +112,12 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public ActionResult AddFlavor(Treat trt, int flavorId)
     {
-      #nullable enable
+#nullable enable
       TreatFlavor? joinEntity = _db.TreatFlavors.FirstOrDefault(join => (join.FlavorId == flavorId && join.TreatId == trt.TreatId));
-      #nullable disable
+#nullable disable
       if (flavorId != 0 && joinEntity == null)
       {
-        TreatFlavor newFlavor = new TreatFlavor() { FlavorId = flavorId, TreatId = trt.TreatId};
+        TreatFlavor newFlavor = new TreatFlavor() { FlavorId = flavorId, TreatId = trt.TreatId };
         _db.TreatFlavors.Add(newFlavor);
         _db.SaveChanges();
       }

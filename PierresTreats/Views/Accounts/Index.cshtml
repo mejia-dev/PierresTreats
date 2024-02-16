@@ -3,6 +3,19 @@
 }
 
 <h2>@ViewBag.PageTitle</h2>
-<br />
-<p>@Html.ActionLink("Create an Account", "Register")</p>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <h3>Welcome, @User.Identity.Name!</h3>
+  @using (Html.BeginForm("LogOff", "Accounts"))
+  {
+    <input type="submit" value="Log out" />
+  }
+}
+else
+{
+  <p>@Html.ActionLink("Create an Account", "Register")</p>
+  <p>@Html.ActionLink("Login to Your Account", "Login")</p>
+}
+<br /><br />
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
