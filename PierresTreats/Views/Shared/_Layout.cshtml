@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>@ViewBag.PageTitle - Pierre's Sweet and Savory Treats</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+  </head>
+  <body>
+    @await Html.PartialAsync("_Header")
+    @RenderBody()
+    @await Html.PartialAsync("_Footer")
+  </body>
+</html>
