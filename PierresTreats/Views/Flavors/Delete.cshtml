@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h2>@ViewBag.PageTitle</h2>
+
+<p class="error">Please confirm by clicking the button below:</p>
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+@Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })

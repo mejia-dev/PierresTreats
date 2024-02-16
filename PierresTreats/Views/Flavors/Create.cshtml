@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h2>@ViewBag.PageTitle</h2>
+
+@using (Html.BeginForm())
+{
+  <p>
+    Flavor Name: @Html.TextBoxFor(model => model.FlavorName)<br />
+    @Html.ValidationMessageFor(model => model.FlavorName, "", new { @class = "error" })
+  </p>
+  <input type="submit" value="Add this Flavor" />
+}
+<br /><br />
+<p>@Html.ActionLink("Back to All Flavors", "Index")</p>
