@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.TreatId)
-  @Html.HiddenFor(model => model.AssignedMachines)
+  @Html.HiddenFor(model => model.FlavorTypes)
   <p>
     Treat Name: @Html.TextBoxFor(model => model.TreatName)<br />
     @Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "error" })<br />
