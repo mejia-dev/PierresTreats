@@ -1,0 +1,7 @@
+.error {
+  color: red;
+}
+
+.error>span>a {
+  color: red;
+}
