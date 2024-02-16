@@ -12,7 +12,7 @@
   @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
 }
 
-@using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
   @Html.LabelFor(user => user.Email)
   @Html.TextBoxFor(user => user.Email)
@@ -26,4 +26,4 @@
   <input type="submit" value="Create Account" />
 }
 
-<p>@Html.ActionLink("Back to Accounts", "Index")</p>
+<p>@Html.ActionLink("Back to Account Summary", "Index")</p>

@@ -10,12 +10,12 @@
         <br />
         <p>
           Welcome, <span>@User.Identity.Name</span>!<br />
-          @Html.ActionLink("Manage Account", "Index", "Accounts")
+          @Html.ActionLink("Manage Account", "Index", "Account")
         </p>
       }
       else
       {
-        <p>@Html.ActionLink("Log In / Register", "Index", "Accounts")</p>
+        <p>@Html.ActionLink("Log In / Register", "Index", "Account")</p>
       }
     </div>
   </div>
