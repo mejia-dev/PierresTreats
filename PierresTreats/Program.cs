@@ -24,7 +24,7 @@ namespace PierresTreats
                       );
 
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ToDoListContext>()
+                .AddEntityFrameworkStores<PierresTreatsContext>()
                 .AddDefaultTokenProviders();
 
       WebApplication app = builder.Build();
