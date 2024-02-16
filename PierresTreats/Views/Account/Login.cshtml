@@ -19,7 +19,7 @@
   {
     <p class="error">@ViewBag.ErrorMessage</p>
     @* @Html.Hidden("ReturnUrl", ViewBag.LoginRedirect) *@
-    <input style="{display: hidden}" type="hidden" name="RedirectAction" value="@ViewBag.LoginRedirect" />
+    <input style="{display: hidden}" type="hidden" name="RedirectUrl" value="@ViewBag.LoginRedirect" />
 
   }
   @Html.LabelFor(m => m.Email)

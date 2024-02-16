@@ -33,7 +33,7 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Register(RegisterViewModel model, string RedirectAction)
+    public async Task<ActionResult> Register(RegisterViewModel model)
     {
       if (!ModelState.IsValid)
       {
@@ -45,18 +45,7 @@ namespace PierresTreats.Controllers
         IdentityResult result = await _userManager.CreateAsync(newUser, model.Password);
         if (result.Succeeded)
         {
-          if (RedirectAction != null)
-          {
-            string[] location = RedirectAction.Split('\\');
-            string controllerName = location[0];
-            string viewName = location[1];
-            return RedirectAction(controllerName, viewName);
-          }
-          else
-          {
-            return RedirectToAction("Index");
-          }
-          
+          return RedirectToAction("Index");
         }
         else
         {
@@ -81,7 +70,7 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Login(LoginViewModel model)
+    public async Task<ActionResult> Login(LoginViewModel model, string RedirectUrl)
     {
       if (!ModelState.IsValid)
       {
@@ -92,6 +81,10 @@ namespace PierresTreats.Controllers
         Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
         if (result.Succeeded)
         {
+          if (RedirectUrl != null)
+          {
+            return Redirect($"..{RedirectUrl}");
+          }
           return RedirectToAction("Index");
         }
         else
