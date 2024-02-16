@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+@using PierresTreats.Models;
+
+<h2>@ViewBag.PageTitle</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+  @Html.DropDownList("FlavorId")
+  <br />
+  <input type="submit" value="Add Flavor" />
+}
+
+<p>@Html.ActionLink("Go back", "Details", new {id = Model.TreatId})</p>
