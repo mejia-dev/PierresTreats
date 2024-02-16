@@ -6,7 +6,7 @@
 
 <h2>@ViewBag.PageTitle</h2>
 
-<p class="error">Please confirm the removal of this treat flavor by clicking the button below:</p>
+<p class="error">Please confirm the removal of @Model.Flavor.FlavorName-flavored @Model.Treat.TreatName by clicking the button below:</p>
 @using (Html.BeginForm())
 {
   <input type="submit" value="Delete This Flavor of Treat" />

@@ -126,8 +126,11 @@ namespace PierresTreats.Controllers
 
     public ActionResult DeleteTreat(int treatFlavorId)
     {
-      TreatFlavor selectedTreatFlavor = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
-      ViewBag.PageTitle = "Delete Treat from Flavor";
+      TreatFlavor selectedTreatFlavor = _db.TreatFlavors
+          .Include(trfl => trfl.Treat)
+          .Include(trfl => trfl.Flavor)
+          .FirstOrDefault(entry => entry.TreatFlavorId == treatFlavorId);
+      ViewBag.PageTitle = $"Delete {selectedTreatFlavor.Flavor.FlavorName}-Flavored {selectedTreatFlavor.Treat.TreatName}";
       return View(selectedTreatFlavor);
     }
 
