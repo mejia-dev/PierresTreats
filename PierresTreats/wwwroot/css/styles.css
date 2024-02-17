@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/delight-coffee-2');
+
 .error {
   color: red;
 }
@@ -25,4 +27,21 @@ body {
 	bottom:0px;
 	left:0px;
 	width:100%;
+}
+
+h1 {
+  font-family: 'Delight Coffee', sans-serif;
+  font-size: 200%;
+}
+
+button {
+  background-color: #b6d3be;
+  border-radius: 10px;
+  border-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+
+input {
+  background-color: #b6d3be;
 }
