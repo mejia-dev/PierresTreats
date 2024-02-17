@@ -22,9 +22,10 @@
     <input style="{display: hidden}" type="hidden" name="RedirectUrl" value="@ViewBag.LoginRedirect" />
 
   }
+  <br />
   @Html.LabelFor(m => m.Email)
   @Html.TextBoxFor(m => m.Email)
-
+  <br />
   @Html.LabelFor(m => m.Password)
   @Html.EditorFor(m => m.Password)
 
