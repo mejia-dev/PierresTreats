@@ -5,3 +5,24 @@
 .error>span>a {
   color: red;
 }
+
+#header {
+  background-color: #c196ca;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+body {
+  background-color: #eedef2;
+  text-align: center;
+}
+
+#footer {
+  background-color: #93bc9f;
+  padding: 10px;
+  position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+}

@@ -13,12 +13,10 @@
     {
       <p>No treats have been added yet.</p>
     }
-    <ul>
       @foreach (Treat trt in Model["treats"])
       {
         <li>@Html.ActionLink(@trt.TreatName, "Details", "Treats", new { id = @trt.TreatId })</li>
       }
-    </ul>
     <p>@Html.ActionLink("Manage Treats", "Index", "Treats")</p>
   </div>
 
@@ -28,12 +26,10 @@
     {
       <p>No flavors have been added yet.</p>
     }
-    <ul>
       @foreach (Flavor flvr in Model["flavors"])
       {
         <li>@Html.ActionLink(@flvr.FlavorName, "Details", "Flavors", new { id = @flvr.FlavorId })</li>
       }
-    </ul>
     <p>@Html.ActionLink("Manage Flavors", "Index", "Flavors")</p>
   </div>
 </div>
