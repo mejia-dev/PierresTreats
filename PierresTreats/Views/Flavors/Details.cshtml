@@ -6,9 +6,16 @@
 @using PierresTreats.Models;
 @using System.Collections.Generic;
 
-<h2>@ViewBag.PageTitle</h2>
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Back to All Flavors", "Index")</p>
+  <p>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId })</p>
+  <p>@Html.ActionLink("Delete this Flavor", "Delete", new { id = Model.FlavorId })</p>
+</div>
 
-<p><strong>@Model.FlavorName-flavored Treats:</strong>
+
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  <p><strong>@Model.FlavorName-flavored Treats:</strong>
   @if (Model.TreatTypes.Count == 0)
   {
   <p>No treats are currently @Model.FlavorName-flavored.</p>
@@ -27,18 +34,11 @@
 <p>
   @if (ViewBag.TreatsCount >= 1)
   {
-    @Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.FlavorId })
+    @Html.ActionLink("Add A Treat in this Flavor", "AddTreat", new { id = Model.FlavorId })
   }
   else
   {
   <p class="error">You must <span>@Html.ActionLink("create a treat", "Create", "Flavors")</span> before you can make it @Model.FlavorName-flavored.</p>
   }
 </p>
-
-<br /><br />
-<p>@Html.ActionLink("Edit this Flavor", "Edit", new { id = Model.FlavorId })</p>
-
-<p>@Html.ActionLink("Delete this Flavor", "Delete", new { id = Model.FlavorId })</p>
-
-<br /><br />
-<p>@Html.ActionLink("Back to All Flavors", "Index")</p>
+</div>
