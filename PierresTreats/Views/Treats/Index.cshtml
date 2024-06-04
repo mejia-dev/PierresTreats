@@ -5,19 +5,17 @@
 @using PierresTreats.Models;
 
 <div class="bodyColumnA">
-  <p>@Html.ActionLink("Add new treat", "Create")</p>
   <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  <p>@Html.ActionLink("Add New Treat", "Create")</p>
 </div>
 
 
 <div class="bodyColumnB">
   <h2>@ViewBag.PageTitle</h2>
-
   @if (@Model.Count == 0)
   {
     <p class="error">No treats have been added yet.</p>
   }
-
   @foreach (Treat trt in Model)
   {
     <li>@Html.ActionLink($"{trt.TreatName}", "Details", new { id = trt.TreatId })</li>
