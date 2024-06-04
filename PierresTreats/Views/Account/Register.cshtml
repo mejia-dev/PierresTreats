@@ -5,25 +5,29 @@
 @using PierresTreats.ViewModels
 @model RegisterViewModel
 
-<h2>@ViewBag.PageTitle</h2>
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Login to Your Account", "Index")</p>
+  <p>@Html.ActionLink("Back to Account Summary", "Index")</p>
+</div>
 
-@if(!ViewData.ModelState.IsValid) 
-{
-  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
-}
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-{
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user => user.Email)
-  <br />
-  @Html.LabelFor(user => user.Password)
-  @Html.EditorFor(user => user.Password)
-  <br />
-  @Html.LabelFor(user => user.ConfirmPassword)
-  @Html.EditorFor(user => user.ConfirmPassword)
-  <br />
-  <input type="submit" value="Create Account" />
-}
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  @if (!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
+  }
 
-<p>@Html.ActionLink("Back to Account Summary", "Index")</p>
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    <p class="textAlignLeft">
+      @Html.LabelFor(m => m.Email): @Html.TextBoxFor(m => m.Email)
+      <br />
+      @Html.LabelFor(m => m.Password): @Html.TextBoxFor(m => m.Password)
+      <br />
+      @Html.LabelFor(m => m.ConfirmPassword): @Html.TextBoxFor(m => m.ConfirmPassword)
+    </p>
+    <br />
+    <input type="submit" value="Create Account" />
+  }
+</div>
