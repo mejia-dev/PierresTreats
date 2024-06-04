@@ -141,7 +141,7 @@ body {
   color: white;
 }
 
-.bodyColumnB li, p, label {
+.bodyColumnB li, p, label, h3 {
   font-family: 'Sofia Sans', sans-serif;
   font-size: 125%;
   color: white;
