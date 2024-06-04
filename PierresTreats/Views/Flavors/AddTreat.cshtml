@@ -5,14 +5,20 @@
 @model PierresTreats.Models.Flavor
 @using PierresTreats.Models;
 
-<h2>@ViewBag.PageTitle</h2>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.FlavorId)
-  @Html.DropDownList("TreatId")
-  <br />
-  <input type="submit" value="Add Treat" />
-}
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Back to Flavor", "Details", new { id = Model.FlavorId })</p>
+</div>
 
-<p>@Html.ActionLink("Go back", "Details", new { id = Model.FlavorId })</p>
+
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorId)
+    @Html.DropDownList("TreatId")
+    <br />
+    <br />
+    <input type="submit" value="Add Treat" />
+  }
+</div>
