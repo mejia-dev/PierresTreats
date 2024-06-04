@@ -1,6 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/coming');
 @import url('https://fonts.cdnfonts.com/css/sofia-sans');
 
+
 body {
   margin: unset;
   background-image: url(../img/bread-bg.jpg);
@@ -9,6 +10,8 @@ body {
   background-size:cover;
 }
 
+
+/* Errors */
 .error {
   color: red;
 }
@@ -17,25 +20,19 @@ body {
   color: red;
 }
 
-/* 
 .validation-summary-errors {
   color: red;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
 }
 
 .validation-summary-errors > ul {
   list-style-type: none;
 }
 
-#homeContent {
-  display: flex;
-  justify-content: space-evenly;
-} */
-
-
-
-
-
-
+.validation-summary-errors li {
+  font-size: 50%;
+}
 
 
 /* Header */
@@ -144,7 +141,7 @@ body {
   color: white;
 }
 
-.bodyColumnB li, p {
+.bodyColumnB li, p, label {
   font-family: 'Sofia Sans', sans-serif;
   font-size: 125%;
   color: white;
@@ -180,4 +177,9 @@ body {
 .bodyColumnB input {
   font-family: 'Sofia Sans', sans-serif;
   font-size: 125%;
+}
+
+.bodyColumnB .textAlignLeft {
+  display: inline-block;
+  text-align: left;
 }
