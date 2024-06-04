@@ -37,6 +37,7 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
+        @ViewBag.PageTitle = "Create an Account";
         return View(model);
       }
       else
