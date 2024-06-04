@@ -208,3 +208,14 @@ p, label {
 .bodyColumnB button > a {
   text-decoration: none;
 }
+
+.bodyColumnB select {
+  width: 20%;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+}
+
+.bodyColumnB input {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+}
