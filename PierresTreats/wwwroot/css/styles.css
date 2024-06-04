@@ -135,7 +135,7 @@ body {
   text-align: center;
 }
 
-.bodyColumnB h2 {
+.bodyColumnB h1, h2 {
   font-family: 'Coming', sans-serif;
   font-size: 350%;
   color: white;
