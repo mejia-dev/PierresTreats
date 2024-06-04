@@ -152,12 +152,27 @@ p, label {
 
 .bodyColumnA {
   flex: 20%;
-  border-color: red;
-  border-style: dashed;
+  background-color: #FCDFA6;
+  box-sizing: border-box;
+  padding: 2rem;
 }
+
+.bodyColumnA a {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: black;
+  text-align: center;
+}
+
 
 .bodyColumnB {
   flex: 80%;
-  border-color: blue;
-  border-style: dashed;
+  box-sizing: border-box;
+  padding: 2rem;
+  
+}
+
+.bodyColumnB h2 {
+  font-family: 'Coming', sans-serif;
+  font-size: 350%;
 }
