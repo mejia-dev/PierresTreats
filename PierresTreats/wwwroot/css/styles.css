@@ -1,8 +1,17 @@
-@import url('https://fonts.cdnfonts.com/css/delight-coffee-2');
-@import url('https://fonts.cdnfonts.com/css/static-bold');
-@import url('https://fonts.cdnfonts.com/css/budokan-rounded');
-@import url('https://fonts.cdnfonts.com/css/grateful-everyday');
+@import url('https://fonts.cdnfonts.com/css/coming');
+@import url('https://fonts.cdnfonts.com/css/sofia-sans');
 
+
+body {
+  margin: unset;
+  background-image: url(../img/bread-bg.jpg);
+  background-repeat:repeat;
+  background-attachment:fixed;
+  background-size:cover;
+}
+
+
+/* Errors */
 .error {
   color: red;
 }
@@ -11,68 +20,174 @@
   color: red;
 }
 
-#header {
-  background-color: #c196ca;
-  color: white;
-  border-radius: 20px;
-  padding: 1px;
-}
-
-body {
-  background-color: #eedef2;
-  text-align: center;
-}
-
-#footer {
-  background-color: #93bc9f;
-  padding: 1px;
-  position:fixed;
-	bottom:0px;
-	left:0px;
-	width:100%;
-}
-
-h1 {
-  font-family: 'Delight Coffee', sans-serif;
-  font-size: 200%;
-}
-
-h2, h3, h4, h5, strong {
-  font-family: 'Budokan Rounded', sans-serif;
-}
-
-button {
-  background-color: #b6d3be;
-  border-radius: 10px;
-  border-style: none;
-  margin: 10px;
-  padding: 10px;
-}
-
-input {
-  background-color: #b6d3be;
-  font-family: 'Grateful Everyday', sans-serif;
-}
-
-a {
-  font-family: 'Static Bold', sans-serif;
-  font-size: 120%;
-}
-
-p, label {
-  font-family: 'Grateful Everyday', sans-serif;
-}
-
 .validation-summary-errors {
-  font-family: 'Grateful Everyday', sans-serif;
   color: red;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
 }
 
 .validation-summary-errors > ul {
   list-style-type: none;
 }
 
-#homeContent {
+.validation-summary-errors li {
+  font-size: 50%;
+}
+
+
+/* Header */
+#header {
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #A18276;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 4rem;
+}
+
+#headerNavLinks {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: unset
+}
+
+.headerNavLink a {
+  font-family: 'Coming', sans-serif;
+  font-size: 350%;
+  text-decoration: none;
+  color: #FCDFA6;
+}
+
+#headerLogo {
+  position: relative;
+  max-width: 85%;
+  max-height: 85%;
+  display: block;
+  padding: 1rem;
+}
+
+.headerWelcomeMessage {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: #FCDFA6;
+  text-align: center;
+}
+
+.headerWelcomeMessage a {
+  color: #FCDFA6;
+}
+
+
+/* Footer */
+#footer {
+  background-color: #A18276;
+  height: 5vh;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: #FCDFA6;
+  font-family: 'Sofia Sans', sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+#footerContent {
   display: flex;
   justify-content: space-evenly;
+  width: 50%;
+}
+
+#footer a {
+  color: #FCDFA6;
+}
+
+
+/* Body */
+#bodyRenderer {
+  height: 80vh;
+  display: flex;
+}
+
+.bodyColumnA {
+  flex: 20%;
+  background-color: #FCDFA6;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.bodyColumnA a {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: black;
+  text-align: center;
+}
+
+.bodyColumnB {
+  flex: 80%;
+  box-sizing: border-box;
+  padding: 2rem;
+  background-color: rgba(36, 36, 36, .75);
+  text-align: center;
+}
+
+.bodyColumnB h1, h2 {
+  font-family: 'Coming', sans-serif;
+  font-size: 350%;
+  color: white;
+}
+
+.bodyColumnB li, p, label, h3 {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: white;
+}
+
+.bodyColumnB a {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: white;
+}
+
+.bodyColumnB button {
+  border-radius: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: unset;
+  border-style: solid;
+  border-color: white;
+}
+
+.bodyColumnB button > a {
+  text-decoration: none;
+}
+
+.bodyColumnB select {
+  width: 20%;
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+}
+
+.bodyColumnB input {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+}
+
+.bodyColumnB .textAlignLeft {
+  display: inline-block;
+  text-align: left;
+}
+
+#homeTreatsAndFlavors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }

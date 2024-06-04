@@ -2,20 +2,19 @@
   Layout = "_Layout";
 }
 
-<h2>@ViewBag.PageTitle</h2>
-
-@if (User.Identity.IsAuthenticated)
-{
-  <h3>Welcome, @User.Identity.Name!</h3>
-  @using (Html.BeginForm("LogOff", "Account"))
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  @if (User.Identity.IsAuthenticated)
   {
-    <input type="submit" value="Log out" />
+    <h3>Welcome, @User.Identity.Name!</h3>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" value="Log out" />
+    }
   }
-}
-else
-{
-  <p>@Html.ActionLink("Create an Account", "Register")</p>
-  <p>@Html.ActionLink("Login to Your Account", "Login")</p>
-}
-<br /><br />
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+  else
+  {
+    <p>@Html.ActionLink("Create an Account", "Register")</p>
+    <p>@Html.ActionLink("Login to Your Account", "Login")</p>
+  }
+</div>
