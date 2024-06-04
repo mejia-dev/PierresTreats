@@ -5,33 +5,33 @@
 @using PierresTreats.ViewModels
 @model LoginViewModel
 
-<h2>@ViewBag.PageTitle</h2>
-<br />
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Register an Account", "Register")</p>
+  <p>@Html.ActionLink("Back to Accounts", "Index")</p>
+</div>
 
-@if (!ViewData.ModelState.IsValid)
-{
-  <p class="error">@Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")</p>
-}
 
-@using (Html.BeginForm())
-{
-  @if (ViewBag.ErrorMessage != null)
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+
+  @if (!ViewData.ModelState.IsValid)
   {
-    <p class="error">@ViewBag.ErrorMessage</p>
-    @* @Html.Hidden("ReturnUrl", ViewBag.LoginRedirect) *@
-    <input style="{display: hidden}" type="hidden" name="RedirectUrl" value="@ViewBag.LoginRedirect" />
-
+    <p class="error">@Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")</p>
   }
-  <br />
-  @Html.LabelFor(m => m.Email)
-  @Html.TextBoxFor(m => m.Email)
-  <br />
-  @Html.LabelFor(m => m.Password)
-  @Html.EditorFor(m => m.Password)
 
-  <input type="submit" value="Log in" />
-}
-
-<p>@Html.ActionLink("Register for an account", "Register")</p>
-<br /><br />
-<p>@Html.ActionLink("Back to accounts page", "Index")</p>
+  @using (Html.BeginForm())
+  {
+    @if (ViewBag.ErrorMessage != null)
+    {
+      <p class="error">@ViewBag.ErrorMessage</p>
+      <input style="{display: hidden}" type="hidden" name="RedirectUrl" value="@ViewBag.LoginRedirect" />
+    }
+    <p class="textAlignLeft">
+      @Html.LabelFor(m => m.Email): @Html.TextBoxFor(m => m.Email)
+      <br />
+      @Html.LabelFor(m => m.Password): @Html.TextBoxFor(m => m.Password)
+    </p>
+    <br />
+    <input type="submit" value="Log in" />
+  }
+</div>
