@@ -9,7 +9,7 @@ body {
   background-size:cover;
 }
 
-/* .error {
+.error {
   color: red;
 }
 
@@ -17,45 +17,7 @@ body {
   color: red;
 }
 
-body {
-  background-color: #eedef2;
-  text-align: center;
-}
-
-
-
-h1 {
-  font-size: 200%;
-}
-
-h2, h3, h4, h5, strong {
-}
-
-button {
-  background-color: #b6d3be;
-  border-radius: 10px;
-  border-style: none;
-  margin: 10px;
-  padding: 10px;
-}
-
-input {
-  background-color: #b6d3be;
-}
-
-a {
-  font-size: 120%;
-  color: black;
-}
-
-button a {
-  color: white;
-  text-decoration: none;
-}
-
-p, label {
-}
-
+/* 
 .validation-summary-errors {
   color: red;
 }
