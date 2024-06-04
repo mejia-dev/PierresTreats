@@ -1,21 +1,24 @@
 <div id="header">
-  <h1>Pierre's Sweet and Savory Treats</h1>
-  <div id="headerNavDiv">
-    <button>@Html.ActionLink("Home", "Index", "Home")</button>
-    <button>@Html.ActionLink("Treats", "Index", "Treats")</button>
-    <button>@Html.ActionLink("Flavors", "Index", "Flavors")</button>
-    <div>
-      @if (User.Identity.IsAuthenticated)
-      {
-        <p>
-          Welcome, <span>@User.Identity.Name</span>!<br />
-          @Html.ActionLink("Manage Account", "Index", "Account")
-        </p>
-      }
-      else
-      {
-        <p>@Html.ActionLink("Log In / Register", "Index", "Account")</p>
-      }
-    </div>
+  <img src="~/img/pierres-logo.png" id="headerLogo" alt="Pierre's Treats Logo" />
+  <div id="headerNavLinks">
+    <span class="headerNavLink">@Html.ActionLink("Home", "Index", "Home")</span>
+    <span class="headerNavLink">@Html.ActionLink("Treats", "Index", "Treats")</span>
+    <span class="headerNavLink">@Html.ActionLink("Flavors", "Index", "Flavors")</span>
+  </div>
+  <div id="headerAuthStatus">
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p class="headerWelcomeMessage">
+        Welcome, <span>@User.Identity.Name</span>!<br />
+        @Html.ActionLink("Manage Account", "Index", "Account")
+      </p>
+    }
+    else
+    {
+      <p class="headerWelcomeMessage">
+        <span>Welcome!</span><br />
+        @Html.ActionLink("Log In / Register", "Index", "Account")
+      </p>
+    }
   </div>
 </div>
