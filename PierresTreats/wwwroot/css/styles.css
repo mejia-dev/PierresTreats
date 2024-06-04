@@ -1,21 +1,16 @@
-@import url('https://fonts.cdnfonts.com/css/delight-coffee-2');
-@import url('https://fonts.cdnfonts.com/css/static-bold');
-@import url('https://fonts.cdnfonts.com/css/budokan-rounded');
-@import url('https://fonts.cdnfonts.com/css/grateful-everyday');
+@import url('https://fonts.cdnfonts.com/css/coming');
+@import url('https://fonts.cdnfonts.com/css/sofia-sans');
 
-.error {
+body {
+  margin: unset;
+}
+
+/* .error {
   color: red;
 }
 
 .error>span>a {
   color: red;
-}
-
-#header {
-  background-color: #c196ca;
-  color: white;
-  border-radius: 20px;
-  padding: 1px;
 }
 
 body {
@@ -33,12 +28,10 @@ body {
 }
 
 h1 {
-  font-family: 'Delight Coffee', sans-serif;
   font-size: 200%;
 }
 
 h2, h3, h4, h5, strong {
-  font-family: 'Budokan Rounded', sans-serif;
 }
 
 button {
@@ -51,20 +44,22 @@ button {
 
 input {
   background-color: #b6d3be;
-  font-family: 'Grateful Everyday', sans-serif;
 }
 
 a {
-  font-family: 'Static Bold', sans-serif;
   font-size: 120%;
+  color: black;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
 }
 
 p, label {
-  font-family: 'Grateful Everyday', sans-serif;
 }
 
 .validation-summary-errors {
-  font-family: 'Grateful Everyday', sans-serif;
   color: red;
 }
 
@@ -75,4 +70,51 @@ p, label {
 #homeContent {
   display: flex;
   justify-content: space-evenly;
+} */
+
+
+/* Header */
+#header {
+  height: 5%;
+  /* width: 100vw; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #A18276;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 8rem;
+}
+
+#headerNavLinks {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: unset
+}
+
+.headerNavLink a {
+  font-family: 'Coming', sans-serif;
+  font-size: 350%;
+  text-decoration: none;
+  color: #FCDFA6;
+}
+
+#headerLogo {
+  position: relative;
+  width: 15rem;
+  display: block;
+  padding: 1rem;
+}
+
+.headerWelcomeMessage {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: #FCDFA6;
+  text-align: center;
+}
+
+.headerWelcomeMessage a {
+  color: #FCDFA6;
 }
