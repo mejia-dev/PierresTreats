@@ -3,6 +3,10 @@
 
 body {
   margin: unset;
+  background-image: url(../img/bread-bg.jpg);
+  background-repeat:repeat;
+  background-attachment:fixed;
+  background-size:cover;
 }
 
 /* .error {
@@ -164,15 +168,29 @@ p, label {
   text-align: center;
 }
 
-
 .bodyColumnB {
   flex: 80%;
   box-sizing: border-box;
   padding: 2rem;
-  
+  background-color: rgba(36, 36, 36, .75);
+  text-align: center;
 }
 
 .bodyColumnB h2 {
   font-family: 'Coming', sans-serif;
   font-size: 350%;
+  color: white;
 }
+
+.bodyColumnB li, p {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: white;
+}
+
+.bodyColumnB a {
+  font-family: 'Sofia Sans', sans-serif;
+  font-size: 125%;
+  color: white;
+}
+
