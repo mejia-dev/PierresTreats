@@ -4,15 +4,19 @@
 
 @model PierresTreats.Models.Treat
 
-<h2>@ViewBag.PageTitle</h2>
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Back to All Treats", "Index")</p>
+</div>
 
-@using (Html.BeginForm())
-{
-  <p>
-    Treat Name: @Html.TextBoxFor(model => model.TreatName)<br />
-    @Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "error" })<br />
-  </p>
-  <input type="submit" value="Add this Treat" />
-}
-<br /><br />
-@Html.ActionLink("Go back", "Index")
+
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  @using (Html.BeginForm())
+  {
+    <p>
+      Treat Name: @Html.TextBoxFor(model => model.TreatName)<br />
+      @Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "error" })<br />
+    </p>
+    <input type="submit" value="Add this Treat" />
+  }
+</div>
