@@ -18,14 +18,7 @@ body {
   text-align: center;
 }
 
-#footer {
-  background-color: #93bc9f;
-  padding: 1px;
-  position:fixed;
-	bottom:0px;
-	left:0px;
-	width:100%;
-}
+
 
 h1 {
   font-size: 200%;
@@ -73,10 +66,15 @@ p, label {
 } */
 
 
+
+
+
+
+
+
 /* Header */
 #header {
   height: 5%;
-  /* width: 100vw; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -117,4 +115,29 @@ p, label {
 
 .headerWelcomeMessage a {
   color: #FCDFA6;
+}
+
+
+/* Footer */
+#footer {
+  background-color: #A18276;
+  padding: 1px;
+  position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+  color: #FCDFA6;
+  font-size: 100%;
+  font-family: 'Sofia Sans', sans-serif;
+  text-align: center;
+}
+
+#footer a {
+  color: #FCDFA6;
+}
+
+
+/* Body */
+#bodyRenderer {
+
 }
