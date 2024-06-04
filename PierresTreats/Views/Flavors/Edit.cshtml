@@ -5,19 +5,21 @@
 @model PierresTreats.Models.Flavor
 @using PierresTreats.Models;
 
-<h2>@ViewBag.PageTitle</h2>
+<div class="bodyColumnA">
+  <p>@Html.ActionLink("Discard Changes", "Details", new { id = @Model.FlavorId })</p>
+</div>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.FlavorId)
-  @Html.HiddenFor(model => model.TreatTypes)
-  <p>
-    Flavor Name: @Html.TextBoxFor(model => model.FlavorName)<br />
-    @Html.ValidationMessageFor(model => model.FlavorName, "", new { @class = "error" })
-  </p>
-  <input type="submit" value="Confirm Changes" />
-  <br />
-  @Html.ActionLink("Discard Changes", "Details", new { id = @Model.FlavorId })
-}
-<br /><br />
-<p>@Html.ActionLink("Back to All Treats", "Index")</p>
+
+<div class="bodyColumnB">
+  <h2>@ViewBag.PageTitle</h2>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorId)
+    @Html.HiddenFor(model => model.TreatTypes)
+    <p>
+      Flavor Name: @Html.TextBoxFor(model => model.FlavorName)<br />
+      @Html.ValidationMessageFor(model => model.FlavorName, "", new { @class = "error" })
+    </p>
+    <input type="submit" value="Confirm Changes" />
+  }
+</div>
