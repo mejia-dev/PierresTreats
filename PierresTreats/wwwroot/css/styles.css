@@ -194,3 +194,17 @@ p, label {
   color: white;
 }
 
+.bodyColumnB button {
+  border-radius: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: unset;
+  border-style: solid;
+  border-color: white;
+}
+
+.bodyColumnB button > a {
+  text-decoration: none;
+}
