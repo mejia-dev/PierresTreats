@@ -1,5 +1,5 @@
 <h1 align="center">
-  Pierre's Treats
+  🥐 Pierre's Treats 🥐
 </h1>
 <p align="center">
   Bakery storefront powered by ASP.NET<br />
