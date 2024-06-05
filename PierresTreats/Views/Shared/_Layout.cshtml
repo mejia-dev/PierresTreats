@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>@ViewBag.PageTitle - Pierre's Sweet and Savory Treats</title>
-    <link rel="stylesheet" href="~/css/styles.css">
-  </head>
-  <body>
-    @await Html.PartialAsync("_Header")
-    <div id="bodyRenderer">
-      @RenderBody()
-    </div>
-    @await Html.PartialAsync("_Footer")
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="~/img/favicon.ico" />
+  <title>@ViewBag.PageTitle - Pierre's Sweet and Savory Treats</title>
+  <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body>
+  @await Html.PartialAsync("_Header")
+  <div id="bodyRenderer">
+    @RenderBody()
+  </div>
+  @await Html.PartialAsync("_Footer")
+</body>
+
 </html>
