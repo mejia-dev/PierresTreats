@@ -1,22 +1,9 @@
-# Pierre's Sweet and Savory Treats
+<h1 align="center">
+  Pierre's Treats
+</h1>
+<p align="center">Bakery storefront powered by ASP.NET</p>
 
-#### This project acts as a marketplace for a bakery and utilizes ASP.NET Core Identity for authentication.
-
-Created by: [github.com/mejia-dev](https://github.com/mejia-dev)
-
-
-## Technologies Used
-
-* C#
-* ASP.NET / MVC
-* Entity Framework / EFCore
-* ASP.NET Identity
-* MySQL
-* Razor
-
-
-## Description
-
+## ❔ Description
 This project utilizes ASP.NET to allow a shop owner to keep an inventory of "treats" and flavors that they are available in. The project is built in a many-to-many relationship format using EF Core and has full CRUD (Create, Read, Update, Delete) functionality on entities. 
 Additionally, unauthenticated users (customers) can only Read items and can't perform Create, Update, or Delete functions on them.
 
@@ -27,12 +14,24 @@ Features:
 * Allows unauthenticated users to view all treats and flavors.
 
 
-## 1 - Setup/Installation Prerequisite Requirements
+## 💻 Technologies Used
+
+* [C#](https://learn.microsoft.com/en-us/dotnet/csharp/)
+* [ASP.NET / MVC](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc)
+* [Entity Framework / EFCore](https://learn.microsoft.com/en-us/ef/core/)
+* [ASP.NET Identity](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity)
+* [MySQL](https://www.mysql.com/)
+* [Razor Pages](https://learn.microsoft.com/en-us/aspnet/core/razor-pages/)
+
+
+## 🔧 Setup / Installation Steps
+
+### 1 - Setup/Installation Prerequisite Requirements
 This section will cover how to install the .NET SDK and MySQL Community Server. If you already have these applications installed and running at at least version 8.0, proceed to the section [Project Setup Requirements](#2---project-setup-requirements) section below.
 
-### Prerequisite A: .NET SDK Installation
+#### Prerequisite A: .NET SDK Installation
 
-##### Step 1: Download .NET SDK
+###### Step 1: Download .NET SDK
 * Download the .NET 6 SDK (Software Development Kit). To view all download options for the .NET 6 SDK, visit this page. Or, click on any of the following links for an immediate download from Microsoft:
 
   For [Windows](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-windows-x64-installer)
@@ -42,19 +41,19 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   For [Macs with Intel Chip](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-macos-x64-installer)
 
 
-##### Step 2: Install the SDK
+###### Step 2: Install the SDK
 * Open the file. This will launch an installer which will walk you through installation steps. Use the default settings the installer suggests.
 
 
-##### Step 3: Test Installation
+###### Step 3: Test Installation
 * Confirm the installation is successful. First, restart your command line shell (Terminal or GitBash) if it's already open, and then run the command "dotnet --version" (without quotes). You should see a version number as a response.
 
 
-### Prerequisite B: MySQL Community Server
+#### Prerequisite B: MySQL Community Server
 
-#### MacOS Instructions:
+##### MacOS Instructions:
 
-##### MacOS Step 1: Download the MySQL Community Server Installer
+###### MacOS Step 1: Download the MySQL Community Server Installer
 * Start by downloading the MySQL Community Server .dmg file from the MySQL Community Server page:
 
   For [Catalina and above, AND an M2 chip](https://dev.mysql.com/downloads/file/?id=518602)
@@ -66,7 +65,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   For [High Sierra or Mojave](https://dev.mysql.com/downloads/file/?id=484914)
 
 
-##### MacOS Step 2: Install MySQL Community Server
+###### MacOS Step 2: Install MySQL Community Server
 * Launch the installer. Accept all prompts until you reach the Configuration page. Once you've reached Configuration, select or set the following options (use default if not specified):
 
   * Use Legacy Password Encryption.
@@ -74,7 +73,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   * Select "Finish".
 
 
-##### MacOS Step 3: Configure Environment Variables
+###### MacOS Step 3: Configure Environment Variables
 * Open the terminal to set your environment variables using either of the following commands. When finished, close all terminal windows.
 
   * For bash users:
@@ -88,7 +87,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
     ```
 
 
-##### MacOS Step 4: Test Installation (MySQL Community Server)
+###### MacOS Step 4: Test Installation (MySQL Community Server)
 * From a new terminal window, attempt to login to mysql to confirm it is configured properly.
   Substitue "YOUR_PASSWORD_HERE" for the password you set during installation.
 
@@ -99,13 +98,13 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   If you instead receive a `mysql: command not found` error, attempt to uninstall any versions of the applications that are previously installed, then follow this installation guide again.
 
 
-#### Windows 10/11 Instructions:
+##### Windows 10/11 Instructions:
 
-##### Windows Step 1: Download the MySQL Web Installer
+###### Windows Step 1: Download the MySQL Web Installer
 * Download the MySQL Web Installer from the [MySQL Downloads](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi) page. 
 
 
-##### Windows Step 2: Install the MySQL Web Programs
+###### Windows Step 2: Install the MySQL Web Programs
 * Follow along with the installer as described below. If a step is not specifically listed, accept the defaults.
 
   * Select "Yes" if prompted to update.
@@ -128,7 +127,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   * Complete the installation as prompted.
 
 
-##### Windows Step 3: Configure Environment Variables
+###### Windows Step 3: Configure Environment Variables
 * The terminal (CLI, PowerShell, and GitBash) now need to be configured to recognize the mysql command. This can be done through changing the environment variables.
 
   * Press the **Windows** key and **R** key simultaneously to bring up the Run prompt. 
@@ -142,7 +141,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
   * Select "Apply", then select "OK".
 
 
-##### Windows Step 4: Test Installation (MySQL Community Server)
+###### Windows Step 4: Test Installation (MySQL Community Server)
 * Finally, from a new PowerShell window, attempt to login to mysql to confirm it is configured properly.
   Substitue "YOUR_PASSWORD_HERE" for the password you set during installation.
 
@@ -155,15 +154,15 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
 
 
 
-## 2 - Project Setup Requirements
+### 2 - Project Setup Requirements
 
-#### Step 1: Clone Repo
+##### Step 1: Clone Repo
 * Clone this repository to your desktop by running the following command from your Git Bash console:
   ```bash
    git clone https://github.com/mejia-dev/PierresTreats.git
    ```
 
-#### Step 2: Create appsettings.json
+##### Step 2: Create appsettings.json
 * This project requires a file titled `appsettings.json` residing in the project directory (not the root directory).
   * Navigate to the project directory:
     ```bash
@@ -191,7 +190,7 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
 
 
 
-## 3 - Run the Project
+### 3 - Run the Project
 * Navigate to the project directory, and to the project subfolder:
   ```bash
   cd PierresTreats/PierresTreats
@@ -214,41 +213,19 @@ This section will cover how to install the .NET SDK and MySQL Community Server. 
 
 
 
-## Known Bugs
-
+## ⚠️ Known Bugs
+If you see an issue, please report it on the [Issues](https://github.com/mejia-dev/PierresTreats/issues) page.
 * none
 
 
-## Original Prompt:
-Pierre is back! He wants you to create a new application to market his sweet and savory treats. This time, he would like you to build an application with user authentication and a many-to-many relationship. Here are the features he wants in the application:
-
-#### User Stories
+## 🗣️ User Stories
 * The application should have user authentication. A user should be able to log in and log out. Only logged in users should have create, update, and delete functionality. All users should be able to have read functionality.
 * There should be a many-to-many relationship between Treats and Flavors. A treat can have many flavors (such as sweet, savory, spicy, or creamy) and a flavor can have many treats. For instance, the "sweet" flavor could include chocolate croissants, cheesecake, and so on.
 * A user should be able to navigate to a splash page that lists all treats and flavors. Users should be able to click on an individual treat or flavor to see all the treats/flavors that belong to it.
 Objectives
 
 
-## License
+## ⚖️ License
 
-MIT License
-
-Copyright (c) 2023 github.com/mejia-dev
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2024 Aaron Mejia.
+A copy of the license can be found [here](./LICENSE.txt).
