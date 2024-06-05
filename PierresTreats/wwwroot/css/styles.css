@@ -87,7 +87,6 @@ body {
   background-color: #A18276;
   height: 5vh;
   position: fixed;
-  bottom: 0px;
   width: 100%;
   color: #FCDFA6;
   font-family: 'Sofia Sans', sans-serif;
@@ -100,6 +99,8 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 50%;
+  align-items: center;
+  font-size: 1rem;
 }
 
 #footer a {
