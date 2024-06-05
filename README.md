@@ -1,7 +1,10 @@
 <h1 align="center">
   Pierre's Treats
 </h1>
-<p align="center">Bakery storefront powered by ASP.NET</p>
+<p align="center">
+  Bakery storefront powered by ASP.NET<br />
+  <a href="https://pierrestreats.onrender.com/" target="_blank">View the Site</a>
+</p>
 
 ## ❔ Description
 This project utilizes ASP.NET to allow a shop owner to keep an inventory of "treats" and flavors that they are available in. The project is built in a many-to-many relationship format using EF Core and has full CRUD (Create, Read, Update, Delete) functionality on entities. 
