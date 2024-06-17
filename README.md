@@ -230,5 +230,5 @@ Objectives
 
 ## ⚖️ License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2024 Aaron Mejia.
-A copy of the license can be found [here](./LICENSE.txt).
+Copyright (C) 2024 Aaron Mejia<br />
+Open Source under the [GPLv3 License](./LICENSE.txt).
